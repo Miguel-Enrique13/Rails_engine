@@ -5,3 +5,45 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'csv'
+
+Transaction.delete_all
+Transaction.reset_sequence_name
+InvoiceItem.delete_all
+InvoiceItem.reset_sequence_name
+Invoice.delete_all
+Invoice.reset_sequence_name
+Customer.delete_all
+Customer.reset_sequence_name
+Item.delete_all
+Item.reset_sequence_name
+Merchant.delete_all
+Merchant.reset_sequence_name
+
+CSV.foreach('./data/merchants.csv', headers: true, header_converters: :symbol) do |row|
+  Merchant.create!(row.to_h)
+end
+
+CSV.foreach('./data/items.csv', headers: true, header_converters: :symbol) do |row|
+  Item.create!(row.to_h)
+  price = Item.last.unit_price/100
+  Item.last.update(unit_price: price)
+end
+
+CSV.foreach('./data/customers.csv', headers: true, header_converters: :symbol) do |row|
+  Customer.create!(row.to_h)
+end
+
+CSV.foreach('./data/invoices.csv', headers: true, header_converters: :symbol) do |row|
+  Invoice.create!(row.to_h)
+end
+
+CSV.foreach('./data/transactions.csv', headers: true, header_converters: :symbol) do |row|
+  Transaction.create!(row.to_h)
+end
+
+CSV.foreach('./data/invoice_items.csv', headers: true, header_converters: :symbol) do |row|
+  InvoiceItem.create!(row.to_h)
+  price = InvoiceItem.last.unit_price/100
+  InvoiceItem.last.update(unit_price: price)
+end
