@@ -1,20 +1,108 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/Mguardia13/Turing/3_Module/Projects/rails_engine/spec/models/merchant_spec.rb": {
+      "/Users/Mguardia13/Turing/3_Module/Projects/rails_engine/spec/requests/api/v1/items_request_spec.rb": {
         "lines": [
           1,
           null,
           1,
           1,
-          2,
+          1,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
           null,
           null,
           1,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0,
+          null,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0,
+          null,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
           2,
-          2,
-          2,
-          2,
+          null,
+          null,
           null,
           null
         ]
@@ -290,7 +378,7 @@
           null,
           null,
           1,
-          1,
+          2,
           null,
           null,
           null,
@@ -299,9 +387,79 @@
           null
         ]
       },
+      "/Users/Mguardia13/Turing/3_Module/Projects/rails_engine/spec/factories/customer.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/Mguardia13/Turing/3_Module/Projects/rails_engine/spec/factories/invoice.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/Mguardia13/Turing/3_Module/Projects/rails_engine/spec/factories/invoice_item.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/Mguardia13/Turing/3_Module/Projects/rails_engine/spec/factories/item.rb": {
+        "lines": [
+          1,
+          1,
+          2,
+          2,
+          2,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/Mguardia13/Turing/3_Module/Projects/rails_engine/spec/factories/merchants.rb": {
+        "lines": [
+          1,
+          1,
+          2,
+          null,
+          null
+        ]
+      },
+      "/Users/Mguardia13/Turing/3_Module/Projects/rails_engine/spec/factories/transaction.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
       "/Users/Mguardia13/Turing/3_Module/Projects/rails_engine/config/routes.rb": {
         "lines": [
           1,
+          1,
+          1,
+          1,
+          null,
           null,
           null
         ]
@@ -325,19 +483,6 @@
           null
         ]
       },
-      "/Users/Mguardia13/Turing/3_Module/Projects/rails_engine/app/models/invoice.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null
-        ]
-      },
       "/Users/Mguardia13/Turing/3_Module/Projects/rails_engine/app/models/item.rb": {
         "lines": [
           1,
@@ -352,30 +497,45 @@
           null
         ]
       },
-      "/Users/Mguardia13/Turing/3_Module/Projects/rails_engine/app/models/invoice_item.rb": {
+      "/Users/Mguardia13/Turing/3_Module/Projects/rails_engine/app/controllers/api/v1/items_controller.rb": {
         "lines": [
           1,
           1,
+          0,
+          null,
+          null,
           1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
           null,
           1,
           1,
           1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          0,
+          null,
           null
         ]
       },
-      "/Users/Mguardia13/Turing/3_Module/Projects/rails_engine/app/models/transaction.rb": {
+      "/Users/Mguardia13/Turing/3_Module/Projects/rails_engine/app/controllers/application_controller.rb": {
         "lines": [
-          1,
-          1,
-          1,
-          1,
-          null,
           1,
           null
         ]
       }
     },
-    "timestamp": 1605130272
+    "timestamp": 1605140595
   }
 }
