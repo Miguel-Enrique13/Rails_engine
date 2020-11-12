@@ -84,4 +84,25 @@ describe 'Merchant API' do
       expect{Merchant.find(merchant.id)}.to raise_error(ActiveRecord::RecordNotFound)
     end
   end
+
+  describe 'relationships' do
+    it "returns all items for one merchant" do
+      merchant_1 = create(:merchant)
+      merchant_2 = create(:merchant)
+      item_1 = create(:item, merchant_id: merchant_1.id)
+      item_2 = create(:item, merchant_id: merchant_2.id)
+      item_3 = create(:item, merchant_id: merchant_1.id)
+
+      get "/api/v1/merchants/#{merchant_1.id}/items"
+
+      expect(response).to be_successful
+
+      item_data = JSON.parse(response.body, symbolize_names: true)
+
+      expect(item_data).to have_key(:data)
+      expect(item_data[:data]).to be_an(Array)
+      expect(item_data[:data].count).to eq(2)
+      expect(item_data[:data].first[:id]).to eq(item_1.id.to_s)
+    end
+  end
 end
