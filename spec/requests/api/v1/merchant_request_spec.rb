@@ -105,4 +105,31 @@ describe 'Merchant API' do
       expect(item_data[:data].first[:id]).to eq(item_1.id.to_s)
     end
   end
+
+  describe "Find Endpoints" do
+    it "finds single merchant by case insensitive search" do
+      merchant_1 = create(:merchant, name: "Sobeys Grocery Store")
+      merchant_2 = create(:merchant, name: "Save on Foods Grocery Store")
+
+      get "/api/v1/merchants/find", params: { name: "sobeys" }
+
+      merchant_data = JSON.parse(response.body, symbolize_names: true)
+
+      expect(merchant_data).to have_key(:data)
+      expect(merchant_data[:data]).to be_an(Array)
+    end
+
+    it "finds multiple merchant by case insensitive search" do
+      merchant_1 = create(:merchant, name: "Sobeys Grocery Store")
+      merchant_2 = create(:merchant, name: "Save on Foods Grocery Store")
+
+      get "/api/v1/merchants/find_all", params: { name: "grocery" }
+
+      merchant_data = JSON.parse(response.body, symbolize_names: true)
+
+      expect(merchant_data).to have_key(:data)
+      expect(merchant_data[:data]).to be_an(Array)
+      expect(merchant_data[:data].count).to eq(2)
+    end
+  end
 end

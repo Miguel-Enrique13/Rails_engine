@@ -115,4 +115,110 @@ describe "Items API" do
       expect(merchant_data[:data][:id]).to eq(merchant.id.to_s)
     end
   end
+
+  describe "Find Endpoints" do
+    it "finds single item by case insensitive search" do
+      merchant1 = create(:merchant)
+      merchant2 = create(:merchant)
+      item1 = create(:item, name: "iPhone X", description: 'The most innovative phone ever', unit_price: 1500.00, merchant: merchant1)
+      item2 = create(:item, name: "Nokia Phone", description: 'The most indestructible phone ever', unit_price: 500.00, merchant: merchant2)
+
+      #find_by_name
+
+      get "/api/v1/items/find", params: {name: "Phone"}
+
+      expect(response).to be_successful
+
+      item_data = JSON.parse(response.body, symbolize_names: true)
+
+      expect(item_data).to have_key(:data)
+      expect(item_data[:data]).to be_an(Array)
+      expect(item_data[:data].first[:id]).to eq(item1.id.to_s)
+
+      #find_by_description
+
+      get "/api/v1/items/find", params: {description: "Phone ever"}
+
+      expect(response).to be_successful
+
+      item_data = JSON.parse(response.body, symbolize_names: true)
+
+
+      expect(item_data).to have_key(:data)
+      expect(item_data[:data]).to be_an(Array)
+      expect(item_data[:data].first[:id]).to eq(item1.id.to_s)
+
+      #find_by_unit_price
+
+      get "/api/v1/items/find", params: {unit_price: 1500.00}
+
+      expect(response).to be_successful
+
+      item_data = JSON.parse(response.body, symbolize_names: true)
+
+
+      expect(item_data).to have_key(:data)
+      expect(item_data[:data]).to be_an(Array)
+      expect(item_data[:data].first[:id]).to eq(item1.id.to_s)
+
+      #find_by_merchant_id
+
+      get "/api/v1/items/find", params: {merchant_id: merchant1.id}
+
+      expect(response).to be_successful
+
+      item_data = JSON.parse(response.body, symbolize_names: true)
+
+
+      expect(item_data).to have_key(:data)
+      expect(item_data[:data]).to be_an(Array)
+      expect(item_data[:data].first[:id]).to eq(item1.id.to_s)
+    end
+
+    it "finds multiple items by case insensitive search" do
+      merchant1 = create(:merchant)
+      merchant2 = create(:merchant)
+      item1 = create(:item, name: "iPhone X", description: 'The most innovative phone ever', unit_price: 1500.00, merchant: merchant1)
+      item2 = create(:item, name: "Nokia Phone", description: 'The most indestructible phone ever', unit_price: 1500.00, merchant: merchant2)
+
+      #find_by_name
+
+      get "/api/v1/items/find_all", params: {name: "Phone"}
+
+      expect(response).to be_successful
+
+      item_data = JSON.parse(response.body, symbolize_names: true)
+
+      expect(item_data).to have_key(:data)
+      expect(item_data[:data]).to be_an(Array)
+      expect(item_data[:data].count).to eq(2)
+      expect(item_data[:data].first[:id]).to eq(item1.id.to_s)
+
+      #find_by_description
+
+      get "/api/v1/items/find_all", params: {description: "Phone ever"}
+
+      expect(response).to be_successful
+
+      item_data = JSON.parse(response.body, symbolize_names: true)
+
+      expect(item_data).to have_key(:data)
+      expect(item_data[:data]).to be_an(Array)
+      expect(item_data[:data].count).to eq(2)
+      expect(item_data[:data].first[:id]).to eq(item1.id.to_s)
+
+      #find_by_unit_price
+
+      get "/api/v1/items/find_all", params: {unit_price: 1500.00}
+
+      expect(response).to be_successful
+
+      item_data = JSON.parse(response.body, symbolize_names: true)
+
+      expect(item_data).to have_key(:data)
+      expect(item_data[:data]).to be_an(Array)
+      expect(item_data[:data].count).to eq(2)
+      expect(item_data[:data].first[:id]).to eq(item1.id.to_s)
+    end
+  end
 end
