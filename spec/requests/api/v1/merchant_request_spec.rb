@@ -132,4 +132,92 @@ describe 'Merchant API' do
       expect(merchant_data[:data].count).to eq(2)
     end
   end
+
+  describe "Business Intelligence Endpoints" do
+    it "returns x number merchants with most revenue" do
+      merchant_1 = create(:merchant)
+      merchant_2 = create(:merchant)
+      item_1 = create(:item, merchant_id: merchant_1.id, unit_price: 50)
+      item_2 = create(:item, merchant_id: merchant_2.id, unit_price: 10)
+      invoice_1 = create(:invoice, merchant_id: merchant_1.id)
+      invoice_2 = create(:invoice, merchant_id: merchant_2.id)
+      invoice_items_1 = create(:invoice_item, invoice_id: invoice_1.id, item_id: item_1.id, quantity: 2, unit_price: item_1.unit_price)
+      invoice_items_2 = create(:invoice_item, invoice_id: invoice_2.id, item_id: item_2.id, quantity: 7, unit_price: item_2.unit_price)
+      transaction_1 = create(:transaction, invoice_id: invoice_1.id)
+      transaction_2 = create(:transaction, invoice_id: invoice_2.id)
+
+      get '/api/v1/merchants/most_revenue', params: { quantity: 2 }
+
+      most_revenue_data = JSON.parse(response.body, symbolize_names: true)
+
+      expect(most_revenue_data).to have_key(:data)
+      expect(most_revenue_data[:data]).to be_an(Array)
+      expect(most_revenue_data[:data].count).to eq(2)
+      expect(most_revenue_data[:data].first[:id]).to eq(merchant_1.id.to_s)
+
+    end
+
+    it "returns x amount of merchants with most items sold" do
+      merchant_1 = create(:merchant)
+      merchant_2 = create(:merchant)
+      item_1 = create(:item, merchant_id: merchant_1.id, unit_price: 50)
+      item_2 = create(:item, merchant_id: merchant_2.id, unit_price: 10)
+      invoice_1 = create(:invoice, merchant_id: merchant_1.id)
+      invoice_2 = create(:invoice, merchant_id: merchant_2.id)
+      invoice_items_1 = create(:invoice_item, invoice_id: invoice_1.id, item_id: item_1.id, quantity: 2, unit_price: item_1.unit_price)
+      invoice_items_2 = create(:invoice_item, invoice_id: invoice_2.id, item_id: item_2.id, quantity: 7, unit_price: item_2.unit_price)
+      transaction_1 = create(:transaction, invoice_id: invoice_1.id)
+      transaction_2 = create(:transaction, invoice_id: invoice_2.id)
+
+      get '/api/v1/merchants/most_items', params: { quantity: 2 }
+
+      most_items_data = JSON.parse(response.body, symbolize_names: true)
+
+      expect(most_items_data).to have_key(:data)
+      expect(most_items_data[:data]).to be_an(Array)
+      expect(most_items_data[:data].count).to eq(2)
+      expect(most_items_data[:data].first[:id]).to eq(merchant_2.id.to_s)
+    end
+
+    it "returns total revenue within a date range" do
+      merchant_1 = create(:merchant)
+      merchant_2 = create(:merchant)
+      item_1 = create(:item, merchant_id: merchant_1.id, unit_price: 50)
+      item_2 = create(:item, merchant_id: merchant_2.id, unit_price: 10)
+      invoice_1 = create(:invoice, merchant_id: merchant_1.id)
+      invoice_2 = create(:invoice, merchant_id: merchant_2.id)
+      invoice_items_1 = create(:invoice_item, invoice_id: invoice_1.id, item_id: item_1.id, quantity: 2, unit_price: item_1.unit_price)
+      invoice_items_2 = create(:invoice_item, invoice_id: invoice_2.id, item_id: item_2.id, quantity: 7, unit_price: item_2.unit_price)
+      transaction_1 = create(:transaction, invoice_id: invoice_1.id, created_at: Date.new(2020,1,2))
+      transaction_2 = create(:transaction, invoice_id: invoice_2.id, created_at: Date.new(2020,1,5))
+
+      get "/api/v1/merchants/revenue_with_time_range", params: { start: Date.new(2020,1,1), end: Date.new(2020,1,4) }
+
+      revenue_data = JSON.parse(response.body, symbolize_names: true)
+
+      expect(revenue_data).to have_key(:data)
+      expect(revenue_data[:data]).to be_an(Hash)
+      expect(revenue_data[:data][:attributes][:revenue]).to eq(100)
+    end
+
+    it "returns total revenue for a single merchant" do
+      merchant_1 = create(:merchant)
+      item_1 = create(:item, merchant_id: merchant_1.id, unit_price: 50)
+      item_2 = create(:item, merchant_id: merchant_1.id, unit_price: 10)
+      invoice_1 = create(:invoice, merchant_id: merchant_1.id)
+      invoice_2 = create(:invoice, merchant_id: merchant_1.id)
+      invoice_items_1 = create(:invoice_item, invoice_id: invoice_1.id, item_id: item_1.id, quantity: 2, unit_price: item_1.unit_price)
+      invoice_items_2 = create(:invoice_item, invoice_id: invoice_2.id, item_id: item_2.id, quantity: 7, unit_price: item_2.unit_price)
+      transaction_1 = create(:transaction, invoice_id: invoice_1.id)
+      transaction_2 = create(:transaction, invoice_id: invoice_2.id)
+
+      get "/api/v1/merchants/#{merchant_1.id}/revenue"
+
+      revenue_data = JSON.parse(response.body, symbolize_names: true)
+
+      expect(revenue_data).to have_key(:data)
+      expect(revenue_data[:data]).to be_an(Hash)
+      expect(revenue_data[:data][:attributes][:revenue]).to eq(170)
+    end
+  end
 end
