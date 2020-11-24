@@ -992,9 +992,9 @@ Sample Request: `localhost:3000/api/v1/merchants/13/revenue`
 
 Follow the following steps to set up this app locally:
 * `git clone git@github.com:Miguel-Enrique13/rails_engine.git`
-* `bundle install'
-* `rails db:create'
-* `rails db:migrate'
+* `bundle install`
+* `rails db:create`
+* `rails db:migrate`
 * `rails db:seed`
 
 ## Versions
