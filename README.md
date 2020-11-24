@@ -30,6 +30,8 @@ The API uses Services and MVC design patterns to keep the code organized. It mak
     - [Most Items Sold](#most-items-sold)
     - [Total Revenue Within Specified Date Range](#total-revenue-within-specified-date-range)
     - [Single Merchant Revenue](#single-merchant-revenue)
+1. [Local Setup](#local-setup)
+1. [Versions](#versions)
 
 ## Items
 ### GET Item /Index
@@ -986,23 +988,16 @@ Sample Request: `localhost:3000/api/v1/merchants/13/revenue`
 ```
 </details>
 
+## Local Setup
 
+Follow the following steps to set up this app locally:
+* `git clone git@github.com:Miguel-Enrique13/rails_engine.git`
+* `bundle install'
+* `rails db:create'
+* `rails db:migrate'
+* `rails db:seed`
 
+## Versions
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+![](https://img.shields.io/badge/Rails-5.2.4.3-informational?style=flat&logo=<LOGO_NAME>&logoColor=white&color=2bbc8a)
+![](https://img.shields.io/badge/Ruby-2.5.3-informational?style=flat&logo=<LOGO_NAME>&logoColor=white&color=2bbc8a)
