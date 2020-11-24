@@ -38,7 +38,7 @@ describe 'Merchant API' do
 
       headers = {"CONTENT_TYPE" => 'application/json'}
 
-      post '/api/v1/merchants', headers: headers, params: JSON.generate(merchant: merchant_params)
+      post '/api/v1/merchants', headers: headers, params: JSON.generate(merchant_params)
 
       created_merchant = Merchant.last
 
@@ -59,7 +59,7 @@ describe 'Merchant API' do
 
       headers = {"CONTENT_TYPE" => 'application/json'}
 
-      patch "/api/v1/merchants/#{merchant.id}", headers: headers, params: JSON.generate(merchant: merchant_params)
+      patch "/api/v1/merchants/#{merchant.id}", headers: headers, params: JSON.generate(merchant_params)
 
       created_merchant = Merchant.last
 
