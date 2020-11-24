@@ -25,6 +25,11 @@ The API uses Services and MVC design patterns to keep the code organized. It mak
     - [Items multi-finder](#items-multi-finder)
     - [Merchants single-finder](#merchants-single-finder)
     - [Merchants multi-finder](#merchants-multi-finder)
+1. [Merchants Business Intelligence Endpoints](#merchants-business-intelligence-endpoints)
+    - [Most Revenue](#most-revenue)
+    - [Most Items Sold](#most-items-sold)
+    - [Total Revenue Within Specified Date Range](#total-revenue-within-specified-date-range)
+    - [Single Merchant Revenue](#single-merchant-revenue)
 
 ## Items
 ### GET Item /Index
@@ -855,6 +860,133 @@ Sample Request: `localhost:3000/api/v1/merchants/find_all?name=LLC`
  
 ```
 </details>
+
+## Merchants Business Intelligence Endpoints
+### Most Revenue
+This endpoint returns a variable number of merchants ranked by total revenue. 
+
+Parameters: 
+
+| `quantity` | `Required` | `Integer` |
+|----|---|---|
+
+Sample Request: `localhost:3000/api/v1/merchants/most_revenue?quantity=2`
+
+<details>
+    <summary> Sample Response: </summary>
+
+```json
+{
+    "data": [
+        {
+            "id": "14",
+            "type": "merchant_list",
+            "attributes": {
+                "id": 14,
+                "name": "Dicki-Bednar"
+            }
+        },
+        {
+            "id": "89",
+            "type": "merchant_list",
+            "attributes": {
+                "id": 89,
+                "name": "Kassulke, O'Hara and Quitzon"
+            }
+        }
+    ]
+}
+```
+</details>
+
+
+### Most Items Sold
+
+This endpoint returns a variable number of merchants ranked by total number of items sold.
+
+Parameters: 
+
+| `quantity` | `Required` | `Integer` |
+|----|---|---|
+
+Sample Request: `localhost:3000/api/v1/merchants/most_items?quantity=2`
+
+<details>
+    <summary> Sample Response: </summary>
+
+```json
+{
+    "data": [
+        {
+            "id": "89",
+            "type": "merchant_list",
+            "attributes": {
+                "id": 89,
+                "name": "Kassulke, O'Hara and Quitzon"
+            }
+        },
+        {
+            "id": "12",
+            "type": "merchant_list",
+            "attributes": {
+                "id": 12,
+                "name": "Kozey Group"
+            }
+        }
+    ]
+}
+```
+</details>
+
+### Total Revenue Within Specified Date Range
+This endpoint returns the total revenue across all merchants between given dates.
+
+Parameters: 
+
+| `start` | `Required` | `Date` |
+|----|---|---|
+| `end` | `Required` | `Date` |
+|----|---|---|
+
+Sample Request: `localhost:3000/api/v1/merchants/revenue_with_time_range?start=2012-3-27&end=2012-4-27`
+
+<details>
+    <summary> Sample Response: </summary>
+
+```json
+{
+    "data": {
+        "id": null,
+        "attributes": {
+            "revenue": 57493574.869999774
+        }
+    }
+}
+```
+</details>
+
+### Single Merchant Revenue
+
+This endpoint returns the total revenue for a single merchant.
+
+Sample Request: `localhost:3000/api/v1/merchants/13/revenue`
+
+<details>
+    <summary> Sample Response: </summary>
+
+```json
+{
+    "data": {
+        "id": null,
+        "attributes": {
+            "revenue": 460365.26999999967
+        }
+    }
+}
+```
+</details>
+
+
 
 
 
