@@ -154,12 +154,10 @@ Returns JSON object with item information such as: item id, name, description, u
 
 Parameters:
 
+|---|---|---|
 | `name` | Required | String |
-|---|---|---|
 | `description` | Required | String |
-|---|---|---|
 | `unit_price` | Required | Float |
-|---|---|---|
 | `Merchant_id` | Required | integer |
 |---|---|---|
 
