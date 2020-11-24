@@ -21,10 +21,10 @@ The API uses Services and MVC design patterns to keep the code organized. It mak
     - [DELETE Merchant /:id](#delete-merchant-/:id)
 1. [Merchant-Item Relationship](#merchant-item-relationship)
 1. [Finder Endpoints](#finder-endpoints)
-    - [Items single-finder](#item-single-finder)
-    - [Items multi-finder](#item-multi-finder)
-    - [Merchants single-finder](#merchant-single-finder)
-    - [Merchants multi-finder](#merchant-multi-finder)
+    - [Items single-finder](#items-single-finder)
+    - [Items multi-finder](#items-multi-finder)
+    - [Merchants single-finder](#merchants-single-finder)
+    - [Merchants multi-finder](#merchants-multi-finder)
 
 ## Items
 ### GET Item /Index
@@ -502,7 +502,7 @@ Sample Request: `localhost:3000/api/v1/merchants/14/items`
 ## Finder Endpoints
 
 ### Items single-finder
-Find 1 item by searching for their name, description, unit_price or merchant_id.
+Find 1 item that matches your search params.
 
 Parameters: 
 
@@ -612,7 +612,7 @@ Sample Request: `localhost:3000/api/v1/items/find?name=Item Non`
 
 
 ### Items multi-finder
-Find all the items by searching for their name, description, unit_price or merchant_id.
+Find all the items that match your search params.
 
 Parameters: 
 
@@ -724,8 +724,141 @@ data": [
                         
 ```    
 </details>
+
 ### Merchants single-finder
+Find 1 merchant that matches your search params.
+
+Parameters: 
+
+| `name` | `Required` | `String` |
+|----|---|---|
+
+Sample Request: `localhost:3000/api/v1/merchants/find?name=LLC`
+
+<details>
+    <summary> Sample Response: </summary>
+
+```json
+{
+    "data": [
+        {
+            "id": "18",
+            "type": "merchant",
+            "attributes": {
+                "id": 18,
+                "name": "Koepp LLC"
+            },
+            "relationships": {
+                "invoices": {
+                    "data": []
+                },
+                "items": {
+                    "data": []
+                },
+                "invoice-items": {
+                    "data": []
+                },
+                "transactions": {
+                    "data": []
+                }
+             } 
+         }
+     ]
+ }
+```
+</details>
+
 ### Merchants multi-finder
+Find all merchants that matches your search params.
+
+Parameters: 
+
+| `name` | `Required` | `String` |
+|----|---|---|
+
+Sample Request: `localhost:3000/api/v1/merchants/find_all?name=LLC`
+
+<details>
+    <summary> Sample Response: </summary>
+
+```json
+{
+    "data": [
+        {
+            "id": "18",
+            "type": "merchant",
+            "attributes": {
+                "id": 18,
+                "name": "Koepp LLC"
+            },
+            "relationships": {
+                "invoices": {
+                    "data": []
+                },
+                "items": {
+                    "data": []
+                },
+                "invoice-items": {
+                    "data": []
+                },
+                "transactions": {
+                    "data": []
+                }
+             } 
+         },
+         {
+            "id": "31",
+            "type": "merchant",
+            "attributes": {
+                "id": 31,
+                "name": "Maggio LLC"
+            },
+             "relationships": {
+                "invoices": {
+                    "data": []
+                },
+                "items": {
+                    "data": []
+                },
+                "invoice-items": {
+                    "data": []
+                },
+                "transactions": {
+                    "data": []
+                }
+             } 
+         },
+         {
+            "id": "58",
+            "type": "merchant",
+            "attributes": {
+                "id": 58,
+                "name": "Rogahn LLC"
+            },
+             "relationships": {
+                "invoices": {
+                    "data": []
+                },
+                "items": {
+                    "data": []
+                },
+                "invoice-items": {
+                    "data": []
+                },
+                "transactions": {
+                    "data": []
+                }
+             } 
+         }
+     ]
+ } 
+ 
+```
+</details>
+
+
+
+
 
 
 
