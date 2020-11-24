@@ -8,15 +8,14 @@ The API uses Services and MVC design patterns to keep the code organized. It mak
 
 ## Table of Contents
 1. [Items](#items) 
-  - [GET /Index](#get-/index)
-  - [SHOW /:id](#show-/:id)
-
-
+ - [GET /Index](#get-/index)
+ - [SHOW /:id](#show-/:id)
+ - [POST Item](#post-item)
 
 ## Items
 ### GET /Index
 
-Returns a JSON object with a list of all the items. JSON object contains the following attributes: item id, name, description, merchant id. 
+Returns a JSON object with a list of all the items. JSON object contains the following attributes: item id, name, description, unit price and merchant id. 
 It also contains additional data like: transaction id, invoice id, and invoice items id.
 
 Sample request: `localhost:3000/api/v1/items`
@@ -81,8 +80,11 @@ Sample request: `localhost:3000/api/v1/items`
 
 ### SHOW /:id
 
-Returns a JSON object with a single item. JSON object contains the following attributes: item id, name, description, merchant id. 
+Returns a JSON object with a single item. JSON object contains the following attributes: item id, name, description, unit price and merchant id. 
 It also contains additional data like: transaction id, invoice id, and invoice items id.
+
+Parameters:
+|`Item id`| required | String |
 
 Sample Request: `localhost:3000/api/v1/items/1819`
 
@@ -142,6 +144,58 @@ Sample Request: `localhost:3000/api/v1/items/1819`
     ]
  }
  ```
+</details>
+
+### POST item
+
+Returns JSON object with item information such as: item id, name, description, unit price, and merchant id.
+
+<details>
+  <summary> Sample Params: </summary>
+  
+  ```json
+  name: new item
+  description: lorem ipsum
+  unit_price: 15.00
+  merchant_id: 10
+  ```  
+</details>
+
+<details>
+  <summary> Sample Response </Summary>
+  
+  ```json
+  {
+    "data": {
+        "id": "2484",
+        "type": "item",
+        "attributes": {
+            "id": 2484,
+            "name": "new item",
+            "description": "lorem ipsum",
+            "unit_price": 15.0,
+            "merchant_id": 10
+        },
+        "relationships": {
+            "merchant": {
+                "data": {
+                    "id": "10",
+                    "type": "merchant"
+                }
+            },
+            "invoice_items": {
+                "data": []
+            },
+            "invoices": {
+                "data": []
+            },
+            "transactions": {
+                "data": []
+            }
+        }
+    }
+}
+  ```
 </details>
 
 
