@@ -170,18 +170,13 @@ Returns JSON object with item information such as: item id, name, description, u
 
 Parameters:
 
-
+| Keys  |  Requirement | Type  |
+|---|---|---|
 | `name` | `Required` | `String` |
-|----|---|---|
-
 | `description` | `Required` | `String` |
-|----|---|---| 
-
 | `unit_price` | `Required` | `Float` |
-|----|---|---| 
-
 | `Merchant_id` | `Required` | `integer` |
-|----|---|---|
+
 
 Sample Request: `localhost:3000/api/v1/items?name=new item&description=lorem ipsum&unit_price=15.00&merchant_id=10`
 
@@ -238,15 +233,11 @@ Sample Request: `localhost:3000/api/v1/items?name=new item&description=lorem ips
 Updates items JSON object with new item information such as: name, description, and unit_price.
 
 Parameters:
-
+| Keys  |  Requirement | Type  |
+|---|---|---|
 | `name` | `Required` | `String` |
-|----|---|---|
-
 | `description` | `Required` | `String` |
-|----|---|---| 
-
 | `unit_price` | `Required` | `Float` |
-|----|---|---| 
 
 Sample Request: `localhost:3000/api/v1/items/2484?name=Update item&description=lorem ipsum&unit_price=50.00`
 
@@ -511,19 +502,14 @@ Sample Request: `localhost:3000/api/v1/merchants/14/items`
 ### Items single-finder
 Find 1 item that matches your search params.
 
-Parameters: 
+Parameters:
 
+| Keys  |  Requirement | Type  |
+|---|---|---|
 | `name` | `Required` | `String` |
-|----|---|---|
-
 | `description` | `Required` | `String` |
-|----|---|---| 
-
 | `unit_price` | `Required` | `Float` |
-|----|---|---| 
-
 | `Merchant_id` | `Required` | `integer` |
-|----|---|---|
 
 Sample Request: `localhost:3000/api/v1/items/find?name=Item Non`
 
@@ -623,17 +609,12 @@ Find all the items that match your search params.
 
 Parameters: 
 
+| Keys  |  Requirement | Type  |
+|---|---|---|
 | `name` | `Required` | `String` |
-|----|---|---|
-
 | `description` | `Required` | `String` |
-|----|---|---| 
-
 | `unit_price` | `Required` | `Float` |
-|----|---|---| 
-
 | `Merchant_id` | `Required` | `integer` |
-|----|---|---|
 
 Sample Request: `localhost:3000/api/v1/items/find_all?name=Item Non`
 
@@ -945,11 +926,10 @@ This endpoint returns the total revenue across all merchants between given dates
 
 Parameters: 
 
+| Keys  |  Requirement | Type  |
+|---|---|---|
 | `start` | `Required` | `Date` |
-|----|---|---|
-
 | `end` | `Required` | `Date` |
-|----|---|---|
 
 Sample Request: `localhost:3000/api/v1/merchants/revenue_with_time_range?start=2012-3-27&end=2012-4-27`
 
