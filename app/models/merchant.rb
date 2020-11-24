@@ -18,7 +18,7 @@ class Merchant < ApplicationRecord
     Merchant
     .joins(invoices: [:invoice_items, :transactions])
     .select('merchants.id, merchants.name, SUM(invoice_items.quantity * invoice_items.unit_price) as Revenue')
-    .where("invoices.status = 'Shipped' and transactions.result = 'success'")
+    .where("invoices.status = 'shipped' and transactions.result = 'success'")
     .group('merchants.id')
     .order('Revenue DESC')
     .limit(params[:quantity].to_i)
@@ -28,7 +28,7 @@ class Merchant < ApplicationRecord
     Merchant
     .joins(invoices: [:invoice_items, :transactions])
     .select('merchants.id, merchants.name, SUM(invoice_items.quantity) as Items_sold')
-    .where("invoices.status = 'Shipped' and transactions.result = 'success'")
+    .where("invoices.status = 'shipped' and transactions.result = 'success'")
     .group('merchants.id')
     .order('Items_sold DESC')
     .limit(params[:quantity].to_i)
@@ -37,14 +37,14 @@ class Merchant < ApplicationRecord
   def self.revenue_with_time_range(params)
     InvoiceItem
     .joins(:transactions)
-    .where("invoices.status = 'Shipped' and transactions.result = 'success' and transactions.created_at > '%#{params[:start]}%' and transactions.created_at < '%#{params[:end]}%'")
+    .where("invoices.status = 'shipped' and transactions.result = 'success' and transactions.created_at > '%#{params[:start]}%' and transactions.created_at < '%#{params[:end]}%'")
     .sum('invoice_items.quantity * invoice_items.unit_price')
   end
 
   def self.merchant_revenue(params)
     InvoiceItem
     .joins(:transactions)
-    .where("invoices.status = 'Shipped' and transactions.result = 'success' and invoices.merchant_id = '#{params[:id]}'")
+    .where("invoices.status = 'shipped' and transactions.result = 'success' and invoices.merchant_id = '#{params[:id]}'")
     .sum('invoice_items.quantity * invoice_items.unit_price')
   end
 
