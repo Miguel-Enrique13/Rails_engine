@@ -73,8 +73,8 @@ Sample request: `localhost:3000/api/v1/items`
                     ]
                 }
             }
-        }
-        "id": "1313",
+        },
+         "id": "1313",
         "type": "item",
         "attributes": {
             "id": 1313,
