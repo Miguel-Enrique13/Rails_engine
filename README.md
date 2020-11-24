@@ -8,9 +8,9 @@ The API uses Services and MVC design patterns to keep the code organized. It mak
 
 ## Table of Contents
 1. [Items](#items) 
- - [GET /Index](#get-/index)
- - [SHOW /:id](#show-/:id)
- - [POST Item](#post-item)
+  - [GET /Index](#get-/index)
+  - [SHOW /:id](#show-/:id)
+  - [POST Item](#post-item)
 
 ## Items
 ### GET /Index
@@ -84,7 +84,9 @@ Returns a JSON object with a single item. JSON object contains the following att
 It also contains additional data like: transaction id, invoice id, and invoice items id.
 
 Parameters:
+
 |`Item id`| required | String |
+|---|---|---|
 
 Sample Request: `localhost:3000/api/v1/items/1819`
 
@@ -149,6 +151,16 @@ Sample Request: `localhost:3000/api/v1/items/1819`
 ### POST item
 
 Returns JSON object with item information such as: item id, name, description, unit price, and merchant id.
+
+Parameters:
+
+| `name` | Required | String |
+| `description` | Required | String |
+| `unit_price` | Required | Float |
+| `Merchant_id` | Required | integer |
+|---|---|---|
+
+Sample Request: `localhost:3000/api/v1/items?name=new item&description=lorem ipsum&unit_price=15.00&merchant_id=10`
 
 <details>
   <summary> Sample Params: </summary>
