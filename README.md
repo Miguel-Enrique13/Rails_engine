@@ -12,13 +12,13 @@ The API uses Services and MVC design patterns to keep the code organized. It mak
     - [SHOW Item /:id](#show-item-/:id)
     - [POST Item](#post-item)
     - [UPDATE Item /:id](#update-item-/:id)
-    - [DELETE Item /:id](#delete-item-:/id)
+    - [DELETE Item /:id](#delete-item-/:id)
 1. [Merchants CRUD](#Merchants)
     - [GET Merchant /Index](#get-merchant-/index)
     - [SHOW Merchant /:id](#show-merchant-/:id)
     - [POST Merchant](#post-merchant)
     - [UPDATE Merchant /:id](#update-merchant-/:id)
-    - [DELETE Merchant /:id](#delete-merchant-:/id)
+    - [DELETE Merchant /:id](#delete-merchant-/:id)
 
 ## Items
 ### GET Item /Index
@@ -389,8 +389,48 @@ Parameters:
 | `name` | Required | String |
 |----|---|---|
 
+Sample Request: `localhost:3000/api/v1/merchants/101?name=update merchant`
+
+<details> 
+    <summary> Sample Response:</summary>
+    
+ ```json
+    {
+    "data": {
+        "id": "101",
+        "type": "merchant",
+        "attributes": {
+            "id": 101,
+            "name": "update merchant"
+        },
+        "relationships": {
+            "invoices": {
+                "data": []
+            },
+            "items": {
+                "data": []
+            },
+            "invoice_items": {
+                "data": []
+            },
+            "transactions": {
+                "data": []
+            }
+        }
+    }
+}
+```
+    
+</details>
+
 
 ### DELETE Merchant /:id
+
+Deletes Merhcant object
+
+Sample Request: `localhost:3000/api/v1/merchants/2484`
+
+Sample Response: **Empty**
   
 
 
