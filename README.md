@@ -20,6 +20,11 @@ The API uses Services and MVC design patterns to keep the code organized. It mak
     - [UPDATE Merchant /:id](#update-merchant-/:id)
     - [DELETE Merchant /:id](#delete-merchant-/:id)
 1. [Merchant-Item Relationship](#merchant-item-relationship)
+1. [Finder Endpoints](#finder-endpoints)
+    - [Items single-finder](#item-single-finder)
+    - [Items multi-finder](#item-multi-finder)
+    - [Merchants single-finder](#merchant-single-finder)
+    - [Merchants multi-finder](#merchant-multi-finder)
 
 ## Items
 ### GET Item /Index
@@ -293,6 +298,8 @@ Sample Request: `localhost:3000/api/v1/items/2484`
 
 Sample Response: **Empty**
 
+## Merchants
+
 ### GET Merchant /Index
 
 returns a JSON object with a list of all the merchants. JSON object contains the following attributes: merchant id, and name. 
@@ -491,6 +498,234 @@ Sample Request: `localhost:3000/api/v1/merchants/14/items`
 }
 ```
 </details>
+
+## Finder Endpoints
+
+### Items single-finder
+Find 1 item by searching for their name, description, unit_price or merchant_id.
+
+Parameters: 
+
+| `name` | `Required` | `String` |
+|----|---|---|
+
+| `description` | `Required` | `String` |
+|----|---|---| 
+
+| `unit_price` | `Required` | `Float` |
+|----|---|---| 
+
+| `Merchant_id` | `Required` | `integer` |
+|----|---|---|
+
+Sample Request: `localhost:3000/api/v1/items/find?name=Item Non`
+
+<details> 
+    <summary> Sample Response: </summary>
+    
+```json
+    {
+    "data": [
+        {
+            "id": "25",
+            "type": "item",
+            "attributes": {
+                "id": 25,
+                "name": "Item Non In",
+                "description": "Error sit qui assumenda. Eius qui nostrum ducimus aut. Expedita et exercitationem deserunt quia aut voluptatem.",
+                "unit_price": 618.98,
+                "merchant_id": 2
+            },
+            "relationships": {
+                "merchant": {
+                    "data": {
+                        "id": "2",
+                        "type": "merchant"
+                    }
+                },
+                "invoice_items": {
+                    "data": [
+                        {
+                            "id": "5295",
+                            "type": "invoice_item"
+                        },
+                        {
+                            "id": "8764",
+                            "type": "invoice_item"
+                        },
+                        {
+                            "id": "14927",
+                            "type": "invoice_item"
+                        },
+                        {
+                            "id": "20877",
+                            "type": "invoice_item"
+                        }
+                    ]
+                },
+                "invoices": {
+                    "data": [
+                        {
+                            "id": "1187",
+                            "type": "invoice"
+                        },
+                        {
+                            "id": "1983",
+                            "type": "invoice"
+                        },
+                        {
+                            "id": "3347",
+                            "type": "invoice"
+                        },
+                        {
+                            "id": "4667",
+                            "type": "invoice"
+                        }
+                    ]
+                },
+                "transactions": {
+                    "data": [
+                        {
+                            "id": "1372",
+                            "type": "transaction"
+                        },
+                        {
+                            "id": "2299",
+                            "type": "transaction"
+                        },
+                        {
+                            "id": "2300",
+                            "type": "transaction"
+                        },
+                        {
+                            "id": "3868",
+                            "type": "transaction"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}
+```
+</details>
+
+
+### Items multi-finder
+Find all the items by searching for their name, description, unit_price or merchant_id.
+
+Parameters: 
+
+| `name` | `Required` | `String` |
+|----|---|---|
+
+| `description` | `Required` | `String` |
+|----|---|---| 
+
+| `unit_price` | `Required` | `Float` |
+|----|---|---| 
+
+| `Merchant_id` | `Required` | `integer` |
+|----|---|---|
+
+Sample Request: `localhost:3000/api/v1/items/find_all?name=Item Non`
+
+<details> 
+    <summary> Sample Response: </summary>
+    
+```json
+data": [
+        {
+            "id": "25",
+            "type": "item",
+            "attributes": {
+                "id": 25,
+                "name": "Item Non In",
+                "description": "Error sit qui assumenda. Eius qui nostrum ducimus aut. Expedita et exercitationem deserunt quia aut voluptatem.",
+                "unit_price": 618.98,
+                "merchant_id": 2
+            },
+            "relationships": {
+                "merchant": {
+                    "data": {
+                        "id": "2",
+                        "type": "merchant"
+                    }
+                },
+                "invoice_items": {
+                    "data": [
+                        {
+                            "id": "5295",
+                            "type": "invoice_item"
+                        }
+                    ]
+                },
+                "invoices": {
+                    "data": [
+                        {
+                            "id": "1187",
+                            "type": "invoice"
+                        }
+                    ]
+                },
+                "transactions": {
+                    "data": [
+                        {
+                            "id": "1372",
+                            "type": "transaction"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "id": "26",
+            "type": "item",
+            "attributes": {
+                "id": 26,
+                "name": "Item Non Deserunt",
+                "description": "Est exercitationem enim quisquam odio qui. Impedit sunt id et expedita eligendi assumenda. Voluptas accusamus omnis pariatur autem numquam non.",
+                "unit_price": 161.53,
+                "merchant_id": 2
+            },
+            "relationships": {
+                "merchant": {
+                    "data": {
+                        "id": "2",
+                        "type": "merchant"
+                    }
+                },
+                "invoice_items": {
+                    "data": [
+                        {
+                            "id": "1171",
+                            "type": "invoice_item"
+                        }
+                    ]
+                },
+                "invoices": {
+                    "data": [
+                        {
+                            "id": "259",
+                            "type": "invoice"
+                        }
+                    ]
+                },
+                "transactions": {
+                    "data": [
+                        {
+                            "id": "2454",
+                            "type": "transaction"
+                        }
+                    ]
+                }
+            }
+        }
+                        
+```    
+</details>
+### Merchants single-finder
+### Merchants multi-finder
 
 
 
