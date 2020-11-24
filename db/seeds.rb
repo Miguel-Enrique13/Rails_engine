@@ -8,17 +8,17 @@
 require 'csv'
 
 Transaction.delete_all
-Transaction.reset_sequence_name
+Transaction.reset_pk_sequence
 InvoiceItem.delete_all
-InvoiceItem.reset_sequence_name
+InvoiceItem.reset_pk_sequence
 Invoice.delete_all
-Invoice.reset_sequence_name
+Invoice.reset_pk_sequence
 Customer.delete_all
-Customer.reset_sequence_name
+Customer.reset_pk_sequence
 Item.delete_all
-Item.reset_sequence_name
+Item.reset_pk_sequence
 Merchant.delete_all
-Merchant.reset_sequence_name
+Merchant.reset_pk_sequence
 
 CSV.foreach('./data/merchants.csv', headers: true, header_converters: :symbol) do |row|
   Merchant.create!(row.to_h)
