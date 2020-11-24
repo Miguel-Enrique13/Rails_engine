@@ -22,8 +22,7 @@ Sample request: `localhost:3000/api/v1/items`
 
 <details>
   <summary> Sample Response: </summary>
-  ```
- json
+ ```json
   {
     "data": [
         {
