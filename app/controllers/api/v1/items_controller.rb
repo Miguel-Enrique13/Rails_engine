@@ -8,6 +8,7 @@ class Api::V1::ItemsController < ApplicationController
   end
 
   def create
+    Item.reset_pk_sequence
     render json: ItemSerializer.new(Item.create!(item_params))
   end
 
