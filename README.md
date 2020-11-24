@@ -19,6 +19,7 @@ The API uses Services and MVC design patterns to keep the code organized. It mak
     - [POST Merchant](#post-merchant)
     - [UPDATE Merchant /:id](#update-merchant-/:id)
     - [DELETE Merchant /:id](#delete-merchant-/:id)
+1. [Merchant-Item Relationship](#merchant-item-relationship)
 
 ## Items
 ### GET Item /Index
@@ -431,7 +432,65 @@ Deletes Merhcant object
 Sample Request: `localhost:3000/api/v1/merchants/2484`
 
 Sample Response: **Empty**
-  
+
+## Merchant-Item Relationship
+
+Displays all the items and item attributes associated with one merchant.
+
+Sample Request: `localhost:3000/api/v1/merchants/14/items`
+
+<details> 
+    <summary> Sample Response: </summary>
+    
+```json
+"data": [
+        {
+            "id": "227",
+            "type": "item",
+            "attributes": {
+                "id": 227,
+                "name": "Item Dicta Autem",
+                "description": "Fugiat est ut eum impedit vel et. Deleniti quia debitis similique. Sint atque explicabo similique est. Iste fugit quis voluptas. Rerum ut harum sed fugiat eveniet ullam ut.",
+                "unit_price": 853.19,
+                "merchant_id": 14
+            },
+            "relationships": {
+                "merchant": {
+                    "data": {
+                        "id": "14",
+                        "type": "merchant"
+                    }
+                },
+                "invoice_items": {
+                    "data": [
+                        {
+                            "id": "84",
+                            "type": "invoice_item"
+                        }
+                    ]
+                },
+                "invoices": {
+                    "data": [
+                        {
+                            "id": "17",
+                            "type": "invoice"
+                        }
+                    ]
+                },
+                "transactions": {
+                    "data": [
+                        {
+                            "id": "18",
+                            "type": "transaction"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}
+```
+</details>
 
 
 
