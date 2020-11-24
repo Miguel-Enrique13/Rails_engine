@@ -8,17 +8,17 @@ The API uses Services and MVC design patterns to keep the code organized. It mak
 
 ## Table of Contents
 1. [Items CRUD](#items) 
-    - [GET Item /Index](#get-item-/index)
-    - [SHOW Item /:id](#show-item-/:id)
+    - [GET Item Index](#get-item-index)
+    - [SHOW Item](#show-item)
     - [POST Item](#post-item)
-    - [UPDATE Item /:id](#update-item-/:id)
-    - [DELETE Item /:id](#delete-item-/:id)
+    - [UPDATE Item](#update-item)
+    - [DELETE Item](#delete-item)
 1. [Merchants CRUD](#Merchants)
-    - [GET Merchant /Index](#get-merchant-/index)
-    - [SHOW Merchant /:id](#show-merchant-/:id)
+    - [GET Merchant Index](#get-merchant-index)
+    - [SHOW Merchant](#show-merchant)
     - [POST Merchant](#post-merchant)
-    - [UPDATE Merchant /:id](#update-merchant-/:id)
-    - [DELETE Merchant /:id](#delete-merchant-/:id)
+    - [UPDATE Merchant](#update-merchant)
+    - [DELETE Merchant](#delete-merchant)
 1. [Merchant-Item Relationship](#merchant-item-relationship)
 1. [Finder Endpoints](#finder-endpoints)
     - [Items single-finder](#items-single-finder)
@@ -34,7 +34,7 @@ The API uses Services and MVC design patterns to keep the code organized. It mak
 1. [Versions](#versions)
 
 ## Items
-### GET Item /Index
+### GET Item Index
 
 Returns a JSON object with a list of all the items. JSON object contains the following attributes: item id, name, description, unit price and merchant id. 
 It also contains additional data like: transaction id, invoice id, and invoice items id.
@@ -99,7 +99,7 @@ Sample request: `localhost:3000/api/v1/items`
  ```
 </details>
 
-### SHOW Item /:id
+### SHOW Item
 
 Returns a JSON object with a single item. JSON object contains the following attributes: item id, name, description, unit price and merchant id. 
 It also contains additional data like: transaction id, invoice id, and invoice items id.
@@ -233,7 +233,7 @@ Sample Request: `localhost:3000/api/v1/items?name=new item&description=lorem ips
   ```
 </details>
 
-### UPDATE Item /:id
+### UPDATE Item
 
 Updates items JSON object with new item information such as: name, description, and unit_price.
 
@@ -297,7 +297,7 @@ Sample Request: `localhost:3000/api/v1/items/2484?name=Update item&description=l
 ```
 </details>
 
-### DELETE Item /:id
+### DELETE Item
 
 Deletes Item object
 
@@ -307,14 +307,14 @@ Sample Response: **Empty**
 
 ## Merchants
 
-### GET Merchant /Index
+### GET Merchant Index
 
 returns a JSON object with a list of all the merchants. JSON object contains the following attributes: merchant id, and name. 
 It also contains additional data like: invoices, items, invoice_items and transactions.
 
 Sample Request: `localhost:3000/api/v1/merchants`
 
-### SHOW Merchant /:id
+### SHOW Merchant
 
 returns a JSON object with a single merchant. JSON object contains the following attributes: merchant id, and name. 
 It also contains additional data like: invoices, items, invoice_items and transactions.
@@ -395,7 +395,7 @@ Sample Request: `localhost:3000/api/v1/merchants?name=new merchant`
 
 </details>
 
-### UPDATE Merchant /:id
+### UPDATE Merchant
 
 Updates merchant JSON object with new item information such as: name.
 
@@ -439,7 +439,7 @@ Sample Request: `localhost:3000/api/v1/merchants/101?name=update merchant`
 </details>
 
 
-### DELETE Merchant /:id
+### DELETE Merchant
 
 Deletes Merhcant object
 
