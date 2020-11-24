@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Rails Engine is a backend API for a fictitious company developing an E-Commerce Application. Rails engine exposes 11 endpoints for the Front End to consume.
+Rails Engine is a backend API for a fictitious company developing an E-Commerce Application. Rails engine exposes 19 endpoints for the Front End to consume.
 
 The API uses Services and MVC design patterns to keep the code organized. It makes use of the serializers to present the information. 
 
