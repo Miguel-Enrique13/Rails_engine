@@ -1,18 +1,243 @@
 {
   "RSpec": {
     "coverage": {
+<<<<<<< HEAD
       "/Users/Mguardia13/Turing/3_Module/Projects/rails_engine/spec/models/customer_spec.rb": {
+=======
+      "/Users/Mguardia13/Turing/3_Module/Projects/rails_engine/spec/requests/api/v1/merchant_request_spec.rb": {
+>>>>>>> 52c61371a3c43400f74de2254dcf78691bf35da7
         "lines": [
           1,
           null,
           1,
           1,
+<<<<<<< HEAD
           2,
           2,
+=======
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
           null,
           null,
           1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
           2,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+>>>>>>> 52c61371a3c43400f74de2254dcf78691bf35da7
+          null,
+          null,
+          1,
+<<<<<<< HEAD
+          2,
+=======
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          0,
+          0,
+          0,
+          null,
+>>>>>>> 52c61371a3c43400f74de2254dcf78691bf35da7
           null,
           null
         ]
@@ -301,8 +526,8 @@
         "lines": [
           1,
           1,
-          1,
-          1,
+          9,
+          9,
           null,
           null
         ]
@@ -313,7 +538,7 @@
           1,
           1,
           1,
-          1,
+          9,
           null,
           null
         ]
@@ -334,9 +559,15 @@
         "lines": [
           1,
           1,
+<<<<<<< HEAD
           11,
           11,
           11,
+=======
+          12,
+          12,
+          4,
+>>>>>>> 52c61371a3c43400f74de2254dcf78691bf35da7
           1,
           null,
           null
@@ -346,7 +577,11 @@
         "lines": [
           1,
           1,
+<<<<<<< HEAD
           19,
+=======
+          16,
+>>>>>>> 52c61371a3c43400f74de2254dcf78691bf35da7
           null,
           null
         ]
@@ -355,9 +590,9 @@
         "lines": [
           1,
           1,
-          1,
-          1,
-          1,
+          9,
+          9,
+          9,
           1,
           null,
           null
@@ -373,6 +608,26 @@
           1,
           1,
           1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
           null,
           null,
           1,
@@ -416,9 +671,54 @@
           null,
           null,
           1,
+<<<<<<< HEAD
           2,
           2,
           2,
+=======
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+>>>>>>> 52c61371a3c43400f74de2254dcf78691bf35da7
           null,
           null
         ]
@@ -480,6 +780,71 @@
           null
         ]
       },
+      "/Users/Mguardia13/Turing/3_Module/Projects/rails_engine/app/controllers/api/v1/merchants_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          2,
+          null,
+          null
+        ]
+      },
+      "/Users/Mguardia13/Turing/3_Module/Projects/rails_engine/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/Mguardia13/Turing/3_Module/Projects/rails_engine/app/serializers/merchant_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/Mguardia13/Turing/3_Module/Projects/rails_engine/app/models/invoice.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
       "/Users/Mguardia13/Turing/3_Module/Projects/rails_engine/app/models/item.rb": {
         "lines": [
           1,
@@ -493,25 +858,42 @@
           1,
           null,
           1,
+<<<<<<< HEAD
           4,
           4,
           2,
           null,
           2,
+=======
+          0,
+          0,
+          0,
+          null,
+          0,
+>>>>>>> 52c61371a3c43400f74de2254dcf78691bf35da7
           null,
           null,
           null,
           1,
+<<<<<<< HEAD
           3,
           3,
           2,
           null,
           1,
+=======
+          0,
+          0,
+          0,
+          null,
+          0,
+>>>>>>> 52c61371a3c43400f74de2254dcf78691bf35da7
           null,
           null,
           null
         ]
       },
+<<<<<<< HEAD
       "/Users/Mguardia13/Turing/3_Module/Projects/rails_engine/spec/models/merchant_spec.rb": {
         "lines": [
           1,
@@ -531,6 +913,9 @@
         ]
       },
       "/Users/Mguardia13/Turing/3_Module/Projects/rails_engine/app/models/merchant.rb": {
+=======
+      "/Users/Mguardia13/Turing/3_Module/Projects/rails_engine/app/models/invoice_item.rb": {
+>>>>>>> 52c61371a3c43400f74de2254dcf78691bf35da7
         "lines": [
           1,
           1,
@@ -547,9 +932,13 @@
           1,
           1,
           null,
+          1,
+          1,
+          1,
           null
         ]
       },
+<<<<<<< HEAD
       "/Users/Mguardia13/Turing/3_Module/Projects/rails_engine/spec/models/transaction_spec.rb": {
         "lines": [
           1,
@@ -1000,10 +1389,55 @@
           1,
           1,
           1,
+=======
+      "/Users/Mguardia13/Turing/3_Module/Projects/rails_engine/app/models/transaction.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          null
+        ]
+      },
+      "/Users/Mguardia13/Turing/3_Module/Projects/rails_engine/app/controllers/api/v1/merchants/items_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
           null,
           null
         ]
       },
+      "/Users/Mguardia13/Turing/3_Module/Projects/rails_engine/app/serializers/item_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/Mguardia13/Turing/3_Module/Projects/rails_engine/app/controllers/api/v1/merchants/search_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+>>>>>>> 52c61371a3c43400f74de2254dcf78691bf35da7
+          null,
+          null
+        ]
+      },
+<<<<<<< HEAD
       "/Users/Mguardia13/Turing/3_Module/Projects/rails_engine/app/serializers/merchant_serializer.rb": {
         "lines": [
           1,
@@ -1035,6 +1469,25 @@
       "/Users/Mguardia13/Turing/3_Module/Projects/rails_engine/app/controllers/api/v1/merchants_controller.rb": {
         "lines": [
           1,
+=======
+      "/Users/Mguardia13/Turing/3_Module/Projects/rails_engine/app/models/customer.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          null
+        ]
+      },
+      "/Users/Mguardia13/Turing/3_Module/Projects/rails_engine/app/controllers/api/v1/merchants/business_intel_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+>>>>>>> 52c61371a3c43400f74de2254dcf78691bf35da7
           1,
           1,
           null,
@@ -1046,6 +1499,7 @@
           1,
           1,
           null,
+<<<<<<< HEAD
           null,
           1,
           1,
@@ -1082,11 +1536,34 @@
           null,
           1,
           1,
+=======
+          null
+        ]
+      },
+      "/Users/Mguardia13/Turing/3_Module/Projects/rails_engine/app/serializers/revenue_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          2,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+>>>>>>> 52c61371a3c43400f74de2254dcf78691bf35da7
           null,
           null
         ]
       }
     },
+<<<<<<< HEAD
     "timestamp": 1606184528
+=======
+    "timestamp": 1605977590
+>>>>>>> 52c61371a3c43400f74de2254dcf78691bf35da7
   }
 }
