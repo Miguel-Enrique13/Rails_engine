@@ -7,11 +7,18 @@ Rails Engine is a backend API for a fictitious company developing an E-Commerce 
 The API uses Services and MVC design patterns to keep the code organized. It makes use of the serializers to present the information. 
 
 ## Table of Contents
-1. [Items](#items) 
+1. [Items CRUD](#items) 
     - [GET Item /Index](#get-item-/index)
     - [SHOW Item /:id](#show-item-/:id)
     - [POST Item](#post-item)
-    - [UPDATE Item /:id](#update-item)
+    - [UPDATE Item /:id](#update-item-/:id)
+    - [DELETE Item /:id](#delete-item-:/id)
+1. [Merchants CRUD](#Merchants)
+    - [GET Merchant /Index](#get-merchant-/index)
+    - [SHOW Merchant /:id](#show-merchant-/:id)
+    - [POST Merchant](#post-merchant)
+    - [UPDATE Merchant /:id](#update-merchant-/:id)
+    - [DELETE Merchant /:id](#delete-merchant-:/id)
 
 ## Items
 ### GET Item /Index
@@ -83,11 +90,6 @@ Sample request: `localhost:3000/api/v1/items`
 
 Returns a JSON object with a single item. JSON object contains the following attributes: item id, name, description, unit price and merchant id. 
 It also contains additional data like: transaction id, invoice id, and invoice items id.
-
-Parameters:
-
-|`Item id`| required | String |
-|---|---|---|
 
 Sample Request: `localhost:3000/api/v1/items/1819`
 
@@ -218,9 +220,9 @@ Sample Request: `localhost:3000/api/v1/items?name=new item&description=lorem ips
   ```
 </details>
 
-## Update Item /:id
+### UPDATE Item /:id
 
-Updates JSON object with new item information such as: name, description, and unit_price.
+Updates items JSON object with new item information such as: name, description, and unit_price.
 
 Parameters:
 
@@ -279,8 +281,118 @@ Sample Request: `localhost:3000/api/v1/items/2484?name=Update item&description=l
         }
     }
 }
-  ```
-  </details>
+```
+</details>
+
+### DELETE Item /:id
+
+Deletes Item object
+
+Sample Request: `localhost:3000/api/v1/items/2484`
+
+Sample Response: **Empty**
+
+### GET Merchant /Index
+
+returns a JSON object with a list of all the merchants. JSON object contains the following attributes: merchant id, and name. 
+It also contains additional data like: invoices, items, invoice_items and transactions.
+
+Sample Request: `localhost:3000/api/v1/merchants`
+
+### SHOW Merchant /:id
+
+returns a JSON object with a single merchant. JSON object contains the following attributes: merchant id, and name. 
+It also contains additional data like: invoices, items, invoice_items and transactions.
+
+Sample Request: `localhost:3000/api/v1/merhcants/101`
+
+<details>
+  <summary> Sample Response: </summary>
+    
+```json
+    {
+    "data": {
+        "id": "101",
+        "type": "merchant",
+        "attributes": {
+            "id": 101,
+            "name": "new merchant"
+        },
+        "relationships": {
+            "invoices": {
+                "data": []
+            },
+            "items": {
+                "data": []
+            },
+            "invoice_items": {
+                "data": []
+            },
+            "transactions": {
+                "data": []
+            }
+        }
+    }
+}
+```
+    
+</details>
+
+### POST Merchant
+Returns JSON object with merchant information such as: merchant id, and name.
+
+Parameters:
+
+| `name` | Required | String |
+|----|---|---|
+
+Sample Request: `localhost:3000/api/v1/merchants?name=new merchant`
+
+<details>
+    <summary> Sample Response:</summary>
+    
+```json
+    {
+    "data": {
+        "id": "101",
+        "type": "merchant",
+        "attributes": {
+            "id": 101,
+            "name": "new merchant"
+        },
+        "relationships": {
+            "invoices": {
+                "data": []
+            },
+            "items": {
+                "data": []
+            },
+            "invoice_items": {
+                "data": []
+            },
+            "transactions": {
+                "data": []
+            }
+        }
+    }
+}
+```
+
+</details>
+
+### UPDATE Merchant /:id
+
+Updates merchant JSON object with new item information such as: name.
+
+Parameters:
+
+| `name` | Required | String |
+|----|---|---|
+
+
+### DELETE Merchant /:id
+  
+
 
 
 
