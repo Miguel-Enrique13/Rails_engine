@@ -8,7 +8,8 @@ The API uses Services and MVC design patterns to keep the code organized. It mak
 
 ## Table of Contents
 1. [Items](#items) 
-  * [GET /Index](#get-/index)
+  - [GET /Index](#get-/index)
+  - [SHOW /:id](#show-/:id)
 
 
 
@@ -73,10 +74,87 @@ Sample request: `localhost:3000/api/v1/items`
                 }
             }
         }
+        "id": "1313",
+        "type": "item",
+        "attributes": {
+            "id": 1313,
+            "name": "Item Impedit Iste",
+            "description": "Laborum facilis dignissimos molestiae. Inventore sit et dolor sed. Exercitationem animi mollitia laboriosam. Est illo ullam aliquam qui quisquam. Et dolor maiores recusandae rerum non.",
+            "unit_price": 684.91,
+            "merchant_id": 58
+        },
+        "relationships": {
+            "merchant": {
+                "data": {
+                    "id": "58",
+                    "type": "merchant"
+                }
+            },
+            "invoice_items": {
+                "data": [
+                    {
+                        "id": "3334",
+                        "type": "invoice_item"
+                    },
+                    {
+                        "id": "5538",
+                        "type": "invoice_item"
+                    },
+                    {
+                        "id": "7184",
+                        "type": "invoice_item"
+                    },
+                    {
+                        "id": "10133",
+                        "type": "invoice_item"
+                    }
+                ]
+            },
+            "invoices": {
+                "data": [
+                    {
+                        "id": "754",
+                        "type": "invoice"
+                    },
+                    {
+                        "id": "1248",
+                        "type": "invoice"
+                    },
+                    {
+                        "id": "1617",
+                        "type": "invoice"
+                    },
+                    {
+                        "id": "2282",
+                        "type": "invoice"
+                    }
+                ]
+            },
+            "transactions": {
+                "data": [
+                    {
+                        "id": "884",
+                        "type": "transaction"
+                    },
+                    {
+                        "id": "1444",
+                        "type": "transaction"
+                    },
+                    {
+                        "id": "1863",
+                        "type": "transaction"
+                    },
+                    {
+                        "id": "2651",
+                        "type": "transaction"
+                    }
+                ]
     ]
  }
  ```
 </details>
+
+### SHOW /:id
 
 
 
